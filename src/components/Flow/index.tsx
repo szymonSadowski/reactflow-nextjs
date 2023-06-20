@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useRef } from "react";
 import ReactFlow, {
   Node,
@@ -63,7 +64,7 @@ function Flow() {
   const { project } = useReactFlow();
 
 
-  const onConnectStart = useCallback((_, params: OnConnectStartParams) => {
+  const onConnectStart = useCallback((_: any, params: OnConnectStartParams) => {
     connectingNodeId.current = params.nodeId;
   }, []);
 
@@ -73,7 +74,7 @@ function Flow() {
   );
 
   const onConnectEnd = useCallback(
-    (event) => {
+    (event: any) => {
       const targetIsPane = event.target.classList.contains("react-flow__pane");
 
       if (targetIsPane) {

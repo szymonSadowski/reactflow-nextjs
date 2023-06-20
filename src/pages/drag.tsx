@@ -17,9 +17,10 @@ const Drag: NextPage = () => {
 export default Drag;
 
 
+type Node = 'default' | 'input' | 'output' 
 
 const Sidebar = () => {
-    const onDragStart = (event, nodeType) => {
+    const onDragStart = (event: any, nodeType: Node) => {
         event.dataTransfer.setData('application/reactflow', nodeType);
         event.dataTransfer.effectAllowed = 'move';
     };
